@@ -1,0 +1,97 @@
+:root{
+    /* ── Gaming dark palette ── */
+    --bg: #0A0A0F;
+    --bg-deep: #050508;
+    --surface-1: #111118;
+    --surface-2: #1A1A25;
+    --surface-3: rgba(255,255,255,0.04);
+    /* Glass + lines */
+    --glass-0: rgba(10,10,15,0.40);
+    --glass-1: rgba(17,17,24,0.55);
+    --glass-2: rgba(26,26,37,0.68);
+    --line: rgba(0,255,135,0.10);
+    --line-dim: rgba(255,255,255,0.06);
+    /* Text */
+    --text: #E2E2E2;
+    --text-bright: #FFFFFF;
+    --text-muted: rgba(226,226,226,0.55);
+    /* Neon accents */
+    --neon: #00FF87;
+    --neon-dim: rgba(0,255,135,0.12);
+    --neon-glow: 0 0 8px rgba(0,255,135,0.45), 0 0 28px rgba(0,255,135,0.12);
+    --cyan: #00D4FF;
+    --cyan-dim: rgba(0,212,255,0.10);
+    --pink: #FF0080;
+    --pink-dim: rgba(255,0,128,0.10);
+    --purple: #8B5CF6;
+    --purple-dim: rgba(139,92,246,0.10);
+    /* Borders */
+    --border: rgba(0,255,135,0.14);
+    --border-dim: rgba(255,255,255,0.07);
+    /* Status */
+    --danger: #FF003C;
+    --danger-hover: #CC0030;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ── Nav links ── */
+.nav-link{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    margin: 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color 160ms, background 160ms, box-shadow 160ms, border-color 160ms;
+}
+.nav-link:hover{
+    color: var(--neon);
+    background: var(--neon-dim);
+}
+.nav-link--cta{
+    color: var(--bg);
+    font-weight: 700;
+    background: var(--neon);
+    border: 1px solid var(--neon);
+    box-shadow: var(--neon-glow);
+}
+.nav-link--cta:hover{
+    background: #00cc6a;
+    box-shadow: 0 0 14px rgba(0,255,135,0.55), 0 0 40px rgba(0,255,135,0.2);
+}
+
+/* ── MUI overrides ── */
+.MuiOutlinedInput-notchedOutline{
+    border-color: var(--border) !important;
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+    border-color: var(--neon) !important;
+    box-shadow: 0 0 6px rgba(0,255,135,0.25);
+}
+
+/* ── Scanline utility ── */
+.scanlines::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.028;
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.09) 0px, transparent 1px, transparent 3px);
+    z-index: 4;
+}
