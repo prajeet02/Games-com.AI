@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "kill -9 $(lsof -ti:5001) 2>/dev/null || true && concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
-    "build": "node dist/index.ts",
+    "build": "node dist/index.js",
     "kill-port": "kill -9 $(lsof -ti:5001) 2>/dev/null || true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
