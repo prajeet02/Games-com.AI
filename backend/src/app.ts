@@ -11,7 +11,7 @@ const app = express();
 
 
 app.use(cors ({
-  origin:"https://games-com-ai.netlify.app/",
+  origin:"https://games-com-ai-backend.onrender.com",
   credentials:true
 }))
 
