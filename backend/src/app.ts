@@ -11,7 +11,7 @@ const app = express();
 
 
 app.use(cors ({
-  origin:"http://localhost:5173",
+  origin:"https://games-com-ai.netlify.app/",
   credentials:true
 }))
 

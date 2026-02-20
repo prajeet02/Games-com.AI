@@ -42,7 +42,7 @@ export const getSignUpUser = async (req:Request, res:Response, next:NextFunction
             path: '/',
             httpOnly: true,
             secure:true,
-            domain:"localhost",
+            domain:"games-com-ai.netlify.app",
         })
 
         const token = createToken(newUser._id.toString(), newUser.email, "7d")
@@ -52,7 +52,7 @@ export const getSignUpUser = async (req:Request, res:Response, next:NextFunction
             path: '/',
             httpOnly: true,
             secure:true,
-            domain:"localhost",
+            domain:"games-com-ai.netlify.app",
             expires,
         })
 
@@ -103,7 +103,7 @@ export const getLogInUser = async (req:Request, res:Response, next:NextFunction)
             path: '/',
             httpOnly: true,
             secure:true,
-            domain:"localhost",
+            domain:"games-com-ai.netlify.app",
     })
 
         const token = createToken(user._id.toString(), user.email, "7d")
@@ -113,7 +113,7 @@ export const getLogInUser = async (req:Request, res:Response, next:NextFunction)
             path: '/',
             httpOnly: true,
             secure:true,
-            domain:"localhost",
+            domain:"games-com-ai.netlify.app",
             expires,
         })
 
@@ -159,7 +159,7 @@ export const getLogOutUser = async (
     next:NextFunction
 ) => {
     console.log("Logout Request Recieved");
-    res.clearCookie("auth_token", {path:"/",httpOnly:true,secure:true,domain:"localhost"});
+    res.clearCookie("auth_token", {path:"/",httpOnly:true,secure:true,domain:"games-com-ai.netlify.app"});
     return res.status(200).json({message:"OK"});
 }
 
