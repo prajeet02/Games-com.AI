@@ -10,10 +10,11 @@ dotenv.config();
 const app = express();
 
 
-app.use(cors ({
-  origin:"https://games-com-ai.netlify.app",
-  credentials:true
-}))
+app.use(cors({
+    origin: 'https://games-com-ai.netlify.app', // Allow only your Netlify app
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+    credentials: true // Optional: Required if you are sending cookies/sessions
+}));
 
 //Convert the data into JSON-FORMAT
 app.use(express.json())
