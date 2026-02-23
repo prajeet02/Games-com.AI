@@ -45,7 +45,16 @@ function Header() {
       <Toolbar sx={{ display: "flex", alignItems: "center", gap: 2, minHeight: 60 }}>
         <Logo />
 
-        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 0.5, alignItems: "center", mx: "auto" }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 0.5,
+            alignItems: "center",
+            mx: "auto",
+            flexWrap: { xs: "wrap", md: "nowrap" },
+            justifyContent: { xs: "center", md: "center" },
+          }}
+        >
           <NavigationLink to="/" text="Home" kind="text" />
           {auth?.isLoggedIn ? (
             <NavigationLink to="/chat" text="Chat" kind="text" />
